@@ -37,10 +37,10 @@ async def on_load(server: PluginServerInterface, old):
         server.logger.info('检测到没有连接 Rcon！请前去开启否则可能无法正常使用机器人。')
 
 
-async def on_unload(server: PluginServerInterface):
+def on_unload(server: PluginServerInterface):
     server.logger.info('检测到插件卸载，已断开与机器人的连接！')
-    await sender.close()
-    await listener.close()
+    sender.close()
+    listener.close()
     listener.flag = False
 
 
