@@ -39,8 +39,8 @@ class WebsocketSender(Websocket):
             self.websocket = None  # 重置 websocket 连接
             for _ in range(3):
                 if self.connect():
-                    return await self.send_data(event_type, data)
-            return None
+                    await self.send_data(event_type, data)
+                    break
         except Exception as e:
             self.server.logger.error(f'发送数据时发生未知错误: {e}')
             return None
