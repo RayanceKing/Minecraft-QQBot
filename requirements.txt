@@ -1,3 +1,0 @@
-mcdreforged~=2.12.3
-websocket-client~=1.8.0
-psutil~=6.0.0
